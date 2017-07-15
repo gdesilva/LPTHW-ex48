@@ -30,6 +30,8 @@ def test_numbers():
     result = lexicon.scan("3 91234")
     assert_equal(result, [('number', 3),
                           ('number', 91234)])
+    assert_equal(lexicon.scan("-10000"), [('number', -10000)])
+    # extra test to check if negative numbers can be handled
 
 def test_errors():
     assert_equal(lexicon.scan("ASDFADFASDF"), [('error', 'ASDFADFASDF')])
